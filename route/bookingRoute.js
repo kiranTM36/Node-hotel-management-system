@@ -6,6 +6,7 @@ const roomModel = require('./../models/roomModels')
 
 const router = express.Router()
 
+//Booking a Room
 router.post('/', async (req, res) => {
     try {
         const { roomNumber, customerId, checkIn, checkOut } = req.body
@@ -59,4 +60,16 @@ router.post('/', async (req, res) => {
     }
 })
 
+//Read Booked room
+router.get('/',async(req, res) => {
+
+    try {
+        const response = await bookingModel.find()
+        console.log("Data Fetch")
+        res.status(200).json(response)
+    } catch (error) {
+        console.log(error)
+        res.status(500).send("Server Error")
+    }
+})
 module.exports = router

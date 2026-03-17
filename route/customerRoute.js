@@ -34,7 +34,7 @@ router.get('/name/:name' ,async (req, res) => {
 })
 
 //create Customer 
-router.post('/',async (req, res) => {
+router.post('/login',async (req, res) => {
     try {
         const data = req.body
         const newCustomer = new customerModel(data)
