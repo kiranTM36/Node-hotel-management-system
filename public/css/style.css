@@ -1,3 +1,4 @@
+/* Home page style */
 *{
     margin: 0;
     padding: 0;
@@ -5,7 +6,7 @@
 }
 body{
     position: relative;
-    background-color: rgba(255,255,255,1);
+    background-color: #e0e5ec;
 }
 header{
     height: 10vh;
@@ -17,6 +18,10 @@ header{
 nav{
     display: flex;
     gap: 10px;
+}
+nav a{
+    text-decoration: none;
+    color: #000;
 }
 .cName{
     font-size: 1.75rem;
@@ -63,3 +68,102 @@ nav{
     width: 33%;
 }
 .infoSection:nth-child(2) {border-left: 2px solid rgba(0,0,0,0.4); border-right: 2px solid rgba(0,0,0,0.4);}
+
+/* Main Container */
+.main {
+    height: 60vh;
+    width: 70vw;
+    display: flex;
+    border-radius: 20px;
+    overflow: hidden;
+
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+
+    box-shadow:
+        15px 15px 20px rgba(0,0,0,0.2),
+        -15px -15px 20px rgba(255, 255, 255, 1);
+}
+
+.left {
+    width: 45%;
+    height: 100%;
+    background-image: url("https://images.unsplash.com/photo-1582719508461-905c673771fd?w=1920&auto=format&fit=crop&q=80");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+.form-overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 3;
+    background-color: rgba(0,0,0,0.3);
+}
+.left .text{
+    position: absolute;
+    top: 10vh;
+    padding: 10px;
+    z-index: 10;
+    color: #fff;
+}
+.hName{
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+.right {
+    width: 55%;
+    height: 100%;
+    background: #e0e5ec;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.right .label{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+.rigth label{
+    width: 17%;
+}
+.right input{
+    width: 83%;
+    padding: 12px;
+    box-shadow: 
+        inset 10px 10px 10px #babecc,
+        inset -10px -10px 10px #fff;
+    border: none;
+    background: #e0e5ec;
+    outline: none;
+    border-radius: 10px;
+}
+.right input[type="submit"] {
+    width: 30%;
+    padding: 12px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 7px;
+    background: #e0e5ec;
+    cursor: pointer;
+
+    box-shadow:
+        5px 5px 10px #babecc,
+        -5px -5px 10px #ffffff;
+
+    transition: 0.2s;
+}
+.right input[type="submit"]:active {
+    box-shadow:
+        inset 5px 5px 10px #babecc,
+        inset -5px -5px 10px #ffffff;
+}

@@ -25,6 +25,10 @@ app.get('/',(req, res) => {
     res.render('home')
 })
 
+app.get('/signin', (req, res) => {
+    res.render('auth/signin')
+})
+
 app.get('/login', (req, res) => {
     res.render('auth/login')
 })
