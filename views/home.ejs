@@ -7,14 +7,16 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <%- include('./component/header.ejs') %>
+    <%- include('./component/header.ejs', {hotel : hotel}) %>
 
     <div class="img">
         <div class="overlay"></div>
     </div>
 
     <div class="info">
-        <div class="infoSection"></div>
+        <div class="infoSection">
+            <%= hotel.address %>
+        </div>
         <div class="infoSection"></div>
         <div class="infoSection"></div>
     </div>

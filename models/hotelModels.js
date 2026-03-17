@@ -23,10 +23,6 @@ const hotelSchema = new mongoose.Schema({
         max: 5,
         min:  1,
     },
-    password : {
-        type : String,
-        required : true
-    }
 })
 
 module.exports = mongoose.model("Hotel", hotelSchema)
