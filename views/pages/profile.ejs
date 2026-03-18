@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - NP Royal Hotel</title>
+    <style>
+        /* ---------- Reset & Base Styles ---------- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            background-color: #e0e5ec;
+            color: #333;
+        }
+
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        /* ---------- Header ---------- */
+        header {
+            height: 10vh;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 5%;
+            background-color: #e0e5ec;
+            box-shadow: 5px 5px 10px #babecc, -5px -5px 10px #ffffff;
+            border-radius: 10px;
+            margin: 1vh 2%;
+        }
+
+        .cName {
+            font-size: 1.75rem;
+            font-weight: 700;
+        }
+
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            font-weight: 500;
+            padding: 8px 12px;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            box-shadow: 3px 3px 6px #babecc, -3px -3px 6px #ffffff;
+            background: #e0e5ec;
+        }
+
+        nav a:hover {
+            box-shadow: inset 3px 3px 6px #babecc, inset -3px -3px 6px #ffffff;
+        }
+
+        /* ---------- Main Container ---------- */
+        main {
+            width: 90%;
+            margin: 3vh auto;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        /* ---------- Profile Info ---------- */
+        .profile-info {
+            padding: 20px;
+            border-radius: 15px;
+            background: #e0e5ec;
+            box-shadow: 10px 10px 15px #babecc, -10px -10px 15px #ffffff;
+        }
+
+        .profile-info p {
+            padding: 12px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            background: #e0e5ec;
+            box-shadow: inset 5px 5px 10px #babecc, inset -5px -5px 10px #ffffff;
+        }
+
+        /* ---------- Booking Cards ---------- */
+        .bookings {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .booking-card {
+            padding: 15px;
+            border-radius: 15px;
+            background: #e0e5ec;
+            box-shadow: 10px 10px 15px #babecc, -10px -10px 15px #ffffff;
+        }
+
+        .booking-card p {
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        /* ---------- Footer ---------- */
+        footer {
+            margin-top: 5vh;
+            padding: 3vh 5%;
+            background-color: #e0e5ec;
+            border-radius: 15px;
+            box-shadow: 5px 5px 10px #babecc, -5px -5px 10px #ffffff;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        footer .footer-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        footer .footer-container div {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        footer h3, footer h4 {
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+        }
+
+        footer .footer-bottom {
+            text-align: center;
+            margin-top: 2vh;
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        /* ---------- Responsive ---------- */
+        @media (max-width: 768px) {
+            main {
+                width: 95%;
+            }
+
+            header {
+                flex-direction: column;
+                height: auto;
+                padding: 2vh 5%;
+                gap: 10px;
+            }
+
+            nav {
+                gap: 10px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .bookings {
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1 class="cName">NP Royal Hotel</h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="room">Rooms</a>
+            <a href="booking">Booking</a>
+        </nav>
+    </header>
+
+    <!-- Profile Section -->
+    <main>
+        <section class="profile-info">
+            <h2>Your Profile</h2>
+                <p><strong>Name:</strong> <%= user.name %></p>
+                <p><strong>Email:</strong> <%= user.email %></p>
+                <p><strong>Phone:</strong> <%= user.phone %></p>
+        </section>
+
+        <section class="bookings">
+            <h2>Your Bookings</h2>
+            <div class="booking-card">
+                <p><strong>Room:</strong> Luxury Deluxe</p>
+                <p><strong>Check-In:</strong> 2026-03-20</p>
+                <p><strong>Check-Out:</strong> 2026-03-25</p>
+            </div>
+            <div class="booking-card">
+                <p><strong>Room:</strong> Standard Room</p>
+                <p><strong>Check-In:</strong> 2026-04-01</p>
+                <p><strong>Check-Out:</strong> 2026-04-05</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div>
+                <h3>NP Royal Hotel</h3>
+                <p>Best hospitality experience.</p>
+            </div>
+            <div>
+                <h4>Contact</h4>
+                <p>Email: info@nproyal.com</p>
+                <p>Phone: +977 1234567890</p>
+            </div>
+        </div>
+        <div class="footer-bottom">&copy; 2026 NP Royal Hotel. All rights reserved.</div>
+    </footer>
+
+</body>
+</html>

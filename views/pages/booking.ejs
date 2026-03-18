@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking - NP Royal Hotel</title>
+    <style>
+        /* ---------- Reset & Base Styles ---------- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            background-color: #e0e5ec;
+            color: #333;
+        }
+
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        /* ---------- Header ---------- */
+        header {
+            height: 10vh;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 5%;
+            background-color: #e0e5ec;
+            box-shadow: 5px 5px 10px #babecc, -5px -5px 10px #ffffff;
+            border-radius: 10px;
+            margin: 1vh 2%;
+        }
+
+        .cName {
+            font-size: 1.75rem;
+            font-weight: 700;
+        }
+
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            font-weight: 500;
+            padding: 8px 12px;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            box-shadow: 3px 3px 6px #babecc, -3px -3px 6px #ffffff;
+            background: #e0e5ec;
+        }
+
+        nav a:hover {
+            box-shadow: inset 3px 3px 6px #babecc, inset -3px -3px 6px #ffffff;
+        }
+
+        /* ---------- Main Form Container ---------- */
+        main {
+            width: 90%;
+            max-width: 900px;
+            margin: 3vh auto;
+        }
+
+        form {
+            background: #e0e5ec;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 10px 10px 20px #babecc, -10px -10px 20px #ffffff;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        form h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .label {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .label label {
+            width: 25%;
+            font-weight: 500;
+        }
+
+        .label input, .label select {
+            width: 75%;
+            padding: 10px;
+            border-radius: 10px;
+            border: none;
+            background: #e0e5ec;
+            box-shadow: inset 5px 5px 10px #babecc, inset -5px -5px 10px #ffffff;
+            outline: none;
+            font-size: 1rem;
+        }
+
+        input[type="submit"] {
+            width: 40%;
+            padding: 12px;
+            margin: 0 auto;
+            border: none;
+            border-radius: 12px;
+            background: #e0e5ec;
+            box-shadow: 5px 5px 10px #babecc, -5px -5px 10px #ffffff;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: 0.2s;
+        }
+
+        input[type="submit"]:active {
+            box-shadow: inset 5px 5px 10px #babecc, inset -5px -5px 10px #ffffff;
+        }
+
+        /* ---------- Rooms Section ---------- */
+        .room-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .room-card {
+            width: 30%;
+            min-width: 200px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 10px 10px 20px #babecc, -10px -10px 20px #ffffff;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .room-card:hover {
+            transform: scale(1.05);
+        }
+
+        .room-card .rName {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            background-color: rgba(0,0,0,0.5);
+            color: #fff;
+            padding: 10px 0;
+            font-weight: 600;
+        }
+
+        /* ---------- Footer ---------- */
+        footer {
+            margin-top: 5vh;
+            padding: 3vh 5%;
+            background-color: #e0e5ec;
+            border-radius: 15px;
+            box-shadow: 5px 5px 10px #babecc, -5px -5px 10px #ffffff;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        footer .footer-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        footer .footer-container div {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        footer h3, footer h4 {
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+        }
+
+        footer .footer-bottom {
+            text-align: center;
+            margin-top: 2vh;
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        /* ---------- Responsive ---------- */
+        @media (max-width: 768px) {
+            form .label {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .room-card {
+                width: 45%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .room-card {
+                width: 100%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1 class="cName">NP Royal Hotel</h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="room">Rooms</a>
+            <a href="profile">Profile</a>
+        </nav>
+    </header>
+
+    <!-- Booking Form -->
+    <main>
+        <form>
+            <h2>Book Your Room</h2>
+            <div class="label">
+                <label>Full Name</label>
+                <input type="text" placeholder="Enter your name" required>
+            </div>
+            <div class="label">
+                <label>Email</label>
+                <input type="email" placeholder="Enter your email" required>
+            </div>
+            <div class="label">
+                <label>Phone</label>
+                <input type="text" placeholder="Enter your phone number" required>
+            </div>
+            <div class="label">
+                <label>Room Type</label>
+                <select>
+                    <option>Luxury Deluxe</option>
+                    <option>Premium Suite</option>
+                    <option>Standard Room</option>
+                    <option>Family Suite</option>
+                    <option>Honeymoon Suite</option>
+                    <option>Executive Room</option>
+                </select>
+            </div>
+            <div class="label">
+                <label>Check-In Date</label>
+                <input type="date" required>
+            </div>
+            <div class="label">
+                <label>Check-Out Date</label>
+                <input type="date" required>
+            </div>
+            <input type="submit" value="Book Now">
+        </form>
+
+        <!-- Room Preview Cards -->
+        <div class="room-options">
+            <div class="room-card" style="background-image: url('https://images.unsplash.com/photo-1631049552057-403cdb8f0658?w=1920');">
+                <div class="rName">Luxury Deluxe</div>
+            </div>
+            <div class="room-card" style="background-image: url('https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=1170');">
+                <div class="rName">Premium Suite</div>
+            </div>
+            <div class="room-card" style="background-image: url('https://images.unsplash.com/photo-1673687782286-674e29c9bf9e?w=1170');">
+                <div class="rName">Standard Room</div>
+            </div>
+            <div class="room-card" style="background-image: url('https://images.unsplash.com/photo-1594703025626-1f450262c3ff?w=1920');">
+                <div class="rName">Family Suite</div>
+            </div>
+            <div class="room-card" style="background-image: url('https://images.unsplash.com/photo-1615828859195-7421e1e23bb3?w=1170');">
+                <div class="rName">Honeymoon Suite</div>
+            </div>
+            <div class="room-card" style="background-image: url('https://images.unsplash.com/photo-1628158209307-00bc2f7cc0a6?w=1170');">
+                <div class="rName">Executive Room</div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div>
+                <h3>NP Royal Hotel</h3>
+                <p>Best hospitality experience.</p>
+            </div>
+            <div>
+                <h4>Contact</h4>
+                <p>Email: info@nproyal.com</p>
+                <p>Phone: +977 1234567890</p>
+            </div>
+        </div>
+        <div class="footer-bottom">&copy; 2026 NP Royal Hotel. All rights reserved.</div>
+    </footer>
+
+</body>
+</html>

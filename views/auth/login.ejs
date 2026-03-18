@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
     <%- include('./../component/header.ejs', {hotel : hotel}) %>
@@ -31,7 +34,12 @@
             <input type="password" name="password" placeholder="Enter your password" required>
         </div>
 
-        <input type="submit" value="Sign In">
+        <div class="btn-label">
+            <div class="btn"><img src="https://clipground.com/images/google-logo-clipart-transparent.png" alt="">Sign In using Google</div>
+            <div class="btn"><img class="img2" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Facebook_Logo_%282019%29.png/1280px-Facebook_Logo_%282019%29.png" alt="">Sign In using Facebook</div>
+            
+        </div>
+        <input type="submit" value="Log In">
         <p class="signup-text">Don't have an account? <a href="signin">Sign In</a></p>
     </form>
 </div>
